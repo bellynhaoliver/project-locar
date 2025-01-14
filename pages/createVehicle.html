@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no"> 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/script-createVehicle.js"></script>
+  <title>Cadatrar de Veículos</title>
+</head>
+<body>
+  <div>
+    <div class="menu shadow-sm d-flex">
+      <div class="container">
+        <div>
+          <img class="logo" src="../images/logoProject.png" />
+        </div>
+    
+        <div class="mr-5">
+          <div class="contactUs">Entre em contato: (84) 9000-0000</div>
+          <ul class="nav justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link" href="../pages/index.html">Sobre a Empresa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../pages/listVehicles.html">Listar Veículos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="../pages/createVehicle.html">Cadastrar Veículos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Excluir Veículos</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container w-100 d-flex mt-1">
+      <div class="w-100 text-rental">
+        <p>Cadastrar Veículo</p>
+
+        <div class="create-vehicle">
+          <form id="vehicle-form">
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="marca">Marca:</label>
+                  <input type="text" class="form-control" id="marca" required>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label for="modelo">Modelo:</label>
+                  <input type="text" class="form-control" id="modelo" required>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label for="anoFabricacao">Ano de fabricação:</label>
+                  <input type="number" class="form-control" inputmode="numeric" id="anoFabricacao" min="1900" max="2099" class="form-control" id="anoFabricacao" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="cor">Cor:</label>
+                  <input type="text" class="form-control" id="cor" required>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label for="tipo">Tipo:</label>
+                  <input type="text" class="form-control" id="tipo" placeholder="ex.: Picape, Sedan, Hatch" required>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label for="quilometragem">Quilometragem (km):</label>
+                  <input type="number" inputmode="numeric" min="0" class="form-control" id="quilometragem" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-4">
+                <div class="form-group">
+                  <label for="numeroDePortas">Número de portas:</label>
+                  <input type="number" inputmode="numeric" min="0" class="form-control" id="numeroDePortas" required>
+                </div>
+              </div>
+              <div class="col-8">
+                <div class="form-group">
+                  <label for="urlImagem">URL da imagem:</label>
+                  <input type="text" class="form-control" id="urlImagem" required>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" onclick="createVehicle()" class="btn btn-createVehicle">Salvar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

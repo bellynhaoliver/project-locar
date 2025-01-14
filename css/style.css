@@ -1,0 +1,231 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #fcfcfc;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Index */
+
+.logo {
+  width: auto;
+  height: 100px;
+  position: absolute; 
+  top: 8px;
+}
+
+.menu {
+  width: 100%;
+  background-color: #e2e3e5;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  height: 110px;
+  color: white;
+}
+
+.contactUs {
+  position: absolute;
+  top: 0;
+  right: 8%;
+  width: 300px;
+  height: 25px;
+  padding: 10px 0;
+  background-color: #076297;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-link {
+  color: #076297;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  margin-top: 2.5rem;
+}
+
+.nav-link:hover {
+  color: #076297;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 15px;
+}
+
+.text-welcome span {
+  max-width: 40%;
+  font-size: 17px;
+}
+
+.text-welcome p {
+  color: #076297;
+  font-size: 20px;
+  letter-spacing: 0.8px;
+  font-weight: 700;
+  margin-top: 10rem;
+  margin-bottom: 4rem;
+}
+
+.aboutUs {
+  background-color: #076297;
+  width: 100%;
+  padding-bottom: 3rem;
+}
+
+.text-aboutUs span {
+  align-items: center;
+  color: white;
+  max-width: 40%;
+  font-size: 17px;
+  max-width: 40%;
+}
+
+.text-aboutUs p {
+  color: white;
+  font-size: 20px;
+  letter-spacing: 0.4px;
+  font-weight: 700;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+.rentalPlans {
+  width: 100%;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+.text-rentalPlans p {
+  color: #076297;
+  font-size: 20px; 
+  letter-spacing: 0.4px;
+  font-weight: 700;
+  margin-top: 2rem;
+}
+
+.footer {
+  background-color: #076297;
+  width: 100%;
+  text-align: center;
+}
+
+.text-footer span {
+  align-items: center;
+  margin: 1rem;
+  color: white;
+  font-size: 12px;
+  letter-spacing: 0.8px;
+  font-weight: 700;
+}
+
+.carousel-box {
+  border: 2px solid blue;
+  width: 100%;
+  height: 200px;
+}
+
+.carousel-inner {
+  align-items: center;
+  text-align: center;
+}
+
+.carousel-control-prev {
+  background-color: #076297;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+.carousel-control-next {
+  background-color: #076297;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+/* ListVehicles */
+
+.text-rental p {
+  color: #076297;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.vehicle-card {
+  background-color: #f4f4f4;
+  border: 2px solid #a3a3a3c5;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+  margin-bottom: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.vehicle-card .card-header {
+  background-color: #076297;
+  color: white;
+  font-weight: bold;
+}
+
+.vehicle-card img {
+  margin-top: 0.5rem;
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid #a3a3a3c5;
+}
+
+.card-title {
+  color: #076297;
+  font-weight: 700;
+}
+
+.text-especificacoes {
+  color: #076297;
+  font-size: 14px;
+}
+
+.text-especificacoes span {
+  color: black;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* CreateVehicle */
+
+.create-vehicle {
+  border-radius: 12px;
+  border: 2px solid #076297c5;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+  padding: 1rem;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #076297;
+}
+
+.form-group input {
+  font-size: 15px;
+  border: 1px solid #a3a3a3c5;
+  height: 2rem;
+}
+
+.btn-createVehicle {
+  background-color: #076297;
+  color: white;
+}
