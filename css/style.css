@@ -190,7 +190,8 @@ body{
 
 .card-title {
   color: #076297;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .text-especificacoes {
@@ -227,5 +228,23 @@ body{
 
 .btn-createVehicle {
   background-color: #076297;
+  color: white;
+}
+
+/* RemoveVehicle */
+
+.btn-removeVehicle{
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: #076297;
+  color: white;
+}
+
+.btn-removeVehicle:hover {
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: #0c8bd4;
   color: white;
 }

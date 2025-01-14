@@ -2,17 +2,24 @@ const apiUrl = "https://my-json-server.typicode.com/bellynhaoliver/api-project-l
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  var vehicles = JSON.parse(localStorage.getItem("vehicles"));
-  if (JSON.parse(localStorage.getItem("vehicles")) == []) {
-    console.log("entrei")
-    fetchVehicles();
-  } else 
-  if(document.getElementById("vehicle-list")) {
+  if (window.location.pathname.endsWith("index.html")) {
+    const vehicles = localStorage.getItem("vehicles");
+    if (!vehicles) {
+      fetchVehicles();
+    }
+  }
+
+  if (window.location.pathname.endsWith("listVehicles.html")) {
     renderVehicles();
   }
+
+  if (window.location.pathname.endsWith("removeVehicle.html")) {
+    renderVehicles(true);
+  }
+
 });
 
-function fetchVehicles() {
+async function fetchVehicles() {
   fetch(apiUrl, {
     method: "GET",
     headers: {
@@ -32,12 +39,12 @@ function fetchVehicles() {
 }
 
 // Função para renderizar os veículos na página
-function renderVehicles() {
+function renderVehicles(pageRemoveVehicles) {
   var vehicles = JSON.parse(localStorage.getItem("vehicles"));
   const vehicleList = document.getElementById("vehicle-list");
   vehicleList.innerHTML = "";
 
-  vehicles.forEach(vehicle => {
+  vehicles.forEach((vehicle, index) => {
     const vehicleCard = document.createElement("div");
     vehicleCard.className = "col-12 vehicle-card card";
 
@@ -48,7 +55,7 @@ function renderVehicles() {
             <h5 class="card-title">${vehicle.marca} ${vehicle.modelo}</h5>
             <p class="card-text">
               <span class="text-especificacoes">Ano:
-                <span>${vehicle.ano}</span>
+                <span>${vehicle.anoFabricacao}</span>
               </span><br>
               <span class="text-especificacoes">Cor:
                 <span>${vehicle.cor}</span>
@@ -67,7 +74,12 @@ function renderVehicles() {
         </div>
 
         <div class="col-md-4">
-          <img src="${vehicle.imagem}" alt="${vehicle.modelo}" class="img-fluid">
+          <img src="${vehicle.urlImagem}" alt="${vehicle.modelo}" class="img-fluid">
+          ${pageRemoveVehicles == true ? (
+          `<div>
+            <button type="submit" onclick="removeVehicle(${index})" class="btn btn-removeVehicle">Excluir</button>
+           </div>`
+          ) : ("")}
         </div>
       </div>
     `;
@@ -103,8 +115,6 @@ function createVehicle() {
     urlImagem
   };
 
-  console.log(JSON.parse(localStorage.getItem("vehicles")))
-
   let vehicles = JSON.parse(localStorage.getItem("vehicles"));
 
   vehicles.push(newVehicle);
@@ -115,3 +125,17 @@ function createVehicle() {
   document.getElementById("vehicle-form").reset();
   window.location.href = "../pages/listVehicles.html";
 };
+
+// Função para excluir um veículo
+function removeVehicle(index) {
+  const vehicles = JSON.parse(localStorage.getItem("vehicles")) || [];
+
+  if (index >= 0 && index < vehicles.length) {
+    vehicles.splice(index, 1);
+
+    localStorage.setItem("vehicles", JSON.stringify(vehicles));
+
+    alert("Veículo excluído com sucesso!");
+    renderVehicles(true);
+  } 
+}
